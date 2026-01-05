@@ -1,0 +1,415 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.054700679842601546 -0.04074410272737427 -0.9976711651229068 4.419708770724513
+  position 0.3987953605014083 -2.525559777204975 0.9955075585732247
+}
+Youbot {
+  translation -0.616099 0.035678 0.101944
+  rotation -0.030042149949565458 0.992923466472881 0.11489325025381471 0.003210460956999181
+  bodySlot [
+    Camera {
+    }
+  ]
+}
+Solid {
+  translation 0 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        emissiveColor 1 0 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+}
+Solid {
+  translation 0.79 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        emissiveColor 1 0 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+}
+Solid {
+  translation 0.28 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        emissiveColor 0 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+Solid {
+  translation 0.91 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        emissiveColor 0 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+}
+Solid {
+  translation 0.14 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        emissiveColor 1 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation 0.55 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        emissiveColor 1 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
+Robot {
+  translation -0.15 0.05 0
+  rotation 0 1 0 0
+  children [
+    HingeJoint {
+      device [
+        RotationalMotor {
+          name "right_motor"
+        }
+      ]
+    }
+    HingeJoint {
+      device [
+        RotationalMotor {
+          name "lift_motor"
+        }
+      ]
+    }
+    Shape {
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+    Camera {
+      translation 0 0 0.01
+      rotation 0 1 0 1.5707996938995747
+      name "cam"
+      fieldOfView 1.57
+      width 1
+      height 1
+      near 0.001
+      far 1
+    }
+  ]
+  controller "color_reader"
+}
+RectangleArena {
+  floorSize 5 5
+  floorAppearance Appearance {
+    material Material {
+      ambientIntensity 0.5
+      diffuseColor 0.4 0.4 0
+      emissiveColor 0.5 0.2 0.3
+      shininess 1
+    }
+  }
+  wallAppearance BrushedAluminium {
+    IBLStrength 0
+  }
+}
+Solid {
+  translation 0.42 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        emissiveColor 0 0 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation 0.67 0.05 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        emissiveColor 0 0 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  translation 1.46 -0.99 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        emissiveColor 1 1 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "start1"
+}
+Solid {
+  translation -1.04 -0.82 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        emissiveColor 1 1 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "start1(1)"
+}
+Solid {
+  translation 0 1.21 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        emissiveColor 1 1 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "start1(2)"
+}
+Solid {
+  translation 0 -1.6 0.0001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        emissiveColor 1 1 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "start1(3)"
+}
+Solid {
+  translation -1.1184460347219963e-17 1.21 0.024960760006002364
+  rotation -0.5689120731741969 -0.11378241463484763 -0.8144891743396598 1.873425005191998e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        emissiveColor 1 1 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "start_box4"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density -1
+    mass 0.1
+  }
+  linearVelocity 5.814539051635085e-18 -3.3091306266162285e-17 -4.6904951034321064e-11
+  angularVelocity 1.9984014443252834e-15 6.661338147750935e-16 -9.478486703038119e-17
+}
+Solid {
+  translation 1.46 -0.99 0.024960760006002367
+  rotation 0.11028680296899611 -0.3860038103915125 0.9158809308278621 3.8656088487384744e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        emissiveColor 1 0 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "start_box"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density -1
+    mass 0.1
+  }
+  linearVelocity -3.027044257935693e-17 -1.0002802657762977e-17 -4.690491550718188e-11
+  angularVelocity 6.661338147750947e-16 -1.998401444325281e-15 -4.104019776670939e-16
+}
+Solid {
+  translation -1.04 -0.82 0.02496076000600236
+  rotation 0.9994091534390251 2.3597563196739684e-14 -0.034370685508018466 6.398665251199369e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        emissiveColor 0 0 1
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name " start_box2"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density -1
+    mass 0.1
+  }
+  linearVelocity -1.4315217922919285e-17 -1.6026538842713577e-17 -4.6904986561456276e-11
+  angularVelocity 6.661338147750937e-16 -6.661338147750931e-16 -3.713443257921199e-16
+}
+Solid {
+  translation -1.1184460347219963e-17 -1.6 0.024960760006002364
+  rotation -0.5689120731741969 -0.11378241463484763 -0.8144891743396598 1.873425005191998e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        emissiveColor 0 1 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "start_box3"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density -1
+    mass 0.1
+  }
+  linearVelocity 5.814539051635085e-18 -3.3091306266162285e-17 -4.6904951034321064e-11
+  angularVelocity 1.9984014443252834e-15 6.661338147750935e-16 -9.478486703038119e-17
+}
+Solid {
+  translation 2.49 0.93 0.0500972
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        emissiveColor 1 0 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid_wall"
+}
+Solid {
+  translation 2.49 1.82 0.0500972
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        emissiveColor 0 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid_wall(1)"
+}
+Solid {
+  translation 2.49 -0.76 0.0500972
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        emissiveColor 0 0 1
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid_wall(2)"
+}
+Solid {
+  translation 2.49 0.25 0.0500972
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        emissiveColor 1 1 0
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid_wall(3)"
+}
