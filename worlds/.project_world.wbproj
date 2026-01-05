@@ -10,4 +10,5 @@ orthographicViewHeight: 1
 textFiles: 0 "controllers/color_reader/color_reader.py"
 globalOptionalRendering: AllBoundingObjects::ContactPoints
 consoles: Console:All:All
-renderingDevicePerspectives: robot:cam;1;32;0;0
+renderingDevicePerspectives: youBot:cam_floor;1;32;0.0285132;0.142254
+renderingDevicePerspectives: youBot:cam_reg;1;1.60938;0;0

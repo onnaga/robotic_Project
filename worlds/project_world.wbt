@@ -9,19 +9,62 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.054700679842601546 -0.04074410272737427 -0.9976711651229068 4.419708770724513
-  position 0.3987953605014083 -2.525559777204975 0.9955075585732247
+  orientation -0.03960593686853281 0.008621543599237315 -0.9991781816826929 3.5689019213509856
+  position 2.2190016449979995 -1.3487075960806054 0.16758060985023562
 }
 Youbot {
-  translation -0.616099 0.035678 0.101944
-  rotation -0.030042149949565458 0.992923466472881 0.11489325025381471 0.003210460956999181
+  hidden position_0_0 763.0149658478136
+  hidden position_0_1 -549.5731608793136
+  hidden position_0_2 762.9742623630411
+  hidden position_0_3 -549.6555292849347
+  hidden linearVelocity_0 0.04998879763460575 0.0010866158891772895 5.179696405318714e-06
+  hidden angularVelocity_0 1.0252395529867042e-05 9.38576560393472e-06 1.0630116622397994e-07
+  hidden position_4_0 -8.722736720852714e-10
+  hidden position_5_0 -1.1000021945101712
+  hidden rotation_6 0 1 0 1.1000021945101714
+  hidden position_6_0 -2.4999985296090848
+  hidden rotation_7 0 1 0 2.4999985296090848
+  hidden position_7_0 -1.77999949444456
+  hidden rotation_8 0 1 0 1.77999949444456
+  hidden position_8_0 6.011397435004186e-08
+  hidden rotation_9 0 0 1 5.960464477539063e-08
+  hidden position_9_0 0.0250000000255992
+  hidden position_9_1 0.024999999976221116
+  hidden translation_10 0 0.0250000000255992 0.09
+  hidden translation_11 0 -0.024999999976221116 0.09
+  hidden rotation_12 0 -1 0 3.5336416280959084
+  hidden rotation_13 0 1 0 3.347146152490005
+  hidden rotation_14 0 -0.9999999999999999 0 3.5743451128684156
+  hidden rotation_15 0 1 0 3.264777746868923
+  translation -0.4792620977884559 0.022811660226497145 0.098874324936066
+  rotation -0.006239322901662817 0.22790506307617137 0.9736633674294084 0.022336311022507414
+  controller "color_reader"
   bodySlot [
+    DistanceSensor {
+      name "ds_front"
+    }
     Camera {
+      translation 0.29 0 2e-07
+      rotation 0 -1 0 -0.5236053071795865
+      name "cam_reg"
+      fieldOfView 1.5
+      recognition Recognition {
+      }
+    }
+    Camera {
+      translation 0.29 0 2e-07
+      rotation 0 1 0 1.5708
+      name "cam_floor"
+      fieldOfView 1.57
+      width 1
+      height 1
+      near 0.001
+      far 1
     }
   ]
 }
 Solid {
-  translation 0 0.05 0.0001
+  translation -0.04 0.05 0.0001
   children [
     Shape {
       appearance PBRAppearance {
@@ -108,42 +151,6 @@ Solid {
     }
   ]
   name "solid(4)"
-}
-Robot {
-  translation -0.15 0.05 0
-  rotation 0 1 0 0
-  children [
-    HingeJoint {
-      device [
-        RotationalMotor {
-          name "right_motor"
-        }
-      ]
-    }
-    HingeJoint {
-      device [
-        RotationalMotor {
-          name "lift_motor"
-        }
-      ]
-    }
-    Shape {
-      geometry Box {
-        size 0.1 0.1 0.1
-      }
-    }
-    Camera {
-      translation 0 0 0.01
-      rotation 0 1 0 1.5707996938995747
-      name "cam"
-      fieldOfView 1.57
-      width 1
-      height 1
-      near 0.001
-      far 1
-    }
-  ]
-  controller "color_reader"
 }
 RectangleArena {
   floorSize 5 5
@@ -250,8 +257,8 @@ Solid {
   name "start1(3)"
 }
 Solid {
-  translation -1.1184460347219963e-17 1.21 0.024960760006002364
-  rotation -0.5689120731741969 -0.11378241463484763 -0.8144891743396598 1.873425005191998e-16
+  translation 1.7072553141350586e-17 1.21 0.024960760000000005
+  rotation -1.2666944147119316e-14 -0.9478552697870727 -0.3187010943452745 1.0120033341077535e-16
   children [
     Shape {
       appearance PBRAppearance {
@@ -264,6 +271,7 @@ Solid {
     }
   ]
   name "start_box4"
+  model "CUBE"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -271,12 +279,12 @@ Solid {
     density -1
     mass 0.1
   }
-  linearVelocity 5.814539051635085e-18 -3.3091306266162285e-17 -4.6904951034321064e-11
-  angularVelocity 1.9984014443252834e-15 6.661338147750935e-16 -9.478486703038119e-17
+  linearVelocity 3.481415170362685e-17 -9.130936978236117e-18 -3.5527136789568366e-17
+  angularVelocity 1.3322676295501898e-15 6.661338147750953e-16 9.558115694919218e-17
 }
 Solid {
-  translation 1.46 -0.99 0.024960760006002367
-  rotation 0.11028680296899611 -0.3860038103915125 0.9158809308278621 3.8656088487384744e-16
+  translation 1.45726 -0.989199 0.0249608
+  rotation 4.91037e-08 5.07968e-08 1 0.0161934
   children [
     Shape {
       appearance PBRAppearance {
@@ -289,6 +297,7 @@ Solid {
     }
   ]
   name "start_box"
+  model "CUBE"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -296,12 +305,10 @@ Solid {
     density -1
     mass 0.1
   }
-  linearVelocity -3.027044257935693e-17 -1.0002802657762977e-17 -4.690491550718188e-11
-  angularVelocity 6.661338147750947e-16 -1.998401444325281e-15 -4.104019776670939e-16
 }
 Solid {
-  translation -1.04 -0.82 0.02496076000600236
-  rotation 0.9994091534390251 2.3597563196739684e-14 -0.034370685508018466 6.398665251199369e-17
+  translation -1.04 -0.82 0.024960759999999995
+  rotation 0.7925349655201864 -0.3522377624534102 0.4978121002243032 1.2103348558843191e-16
   children [
     Shape {
       appearance PBRAppearance {
@@ -314,6 +321,7 @@ Solid {
     }
   ]
   name " start_box2"
+  model "CUBE"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -321,12 +329,12 @@ Solid {
     density -1
     mass 0.1
   }
-  linearVelocity -1.4315217922919285e-17 -1.6026538842713577e-17 -4.6904986561456276e-11
-  angularVelocity 6.661338147750937e-16 -6.661338147750931e-16 -3.713443257921199e-16
+  linearVelocity -3.2471729209237346e-17 8.413793960299722e-18 1.6563737078828873e-27
+  angularVelocity 7.888609052210118e-31 -1.998401444325279e-15 -3.6686430416061923e-16
 }
 Solid {
-  translation -1.1184460347219963e-17 -1.6 0.024960760006002364
-  rotation -0.5689120731741969 -0.11378241463484763 -0.8144891743396598 1.873425005191998e-16
+  translation 7.03908e-12 -1.6 0.0301
+  rotation -4.11959e-10 6.75172e-10 1 1.63666
   children [
     Shape {
       appearance PBRAppearance {
@@ -339,6 +347,7 @@ Solid {
     }
   ]
   name "start_box3"
+  model "CUBE"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -346,8 +355,6 @@ Solid {
     density -1
     mass 0.1
   }
-  linearVelocity 5.814539051635085e-18 -3.3091306266162285e-17 -4.6904951034321064e-11
-  angularVelocity 1.9984014443252834e-15 6.661338147750935e-16 -9.478486703038119e-17
 }
 Solid {
   translation 2.49 0.93 0.0500972
@@ -364,6 +371,7 @@ Solid {
     }
   ]
   name "solid_wall"
+  model "TARGET"
 }
 Solid {
   translation 2.49 1.82 0.0500972
@@ -380,6 +388,7 @@ Solid {
     }
   ]
   name "solid_wall(1)"
+  model "TARGET"
 }
 Solid {
   translation 2.49 -0.76 0.0500972
@@ -396,6 +405,7 @@ Solid {
     }
   ]
   name "solid_wall(2)"
+  model "TARGET"
 }
 Solid {
   translation 2.49 0.25 0.0500972
@@ -412,4 +422,5 @@ Solid {
     }
   ]
   name "solid_wall(3)"
+  model "TARGET"
 }
