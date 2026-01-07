@@ -10,5 +10,7 @@ orthographicViewHeight: 1
 textFiles: 0 "controllers/color_reader/color_reader.py"
 globalOptionalRendering: AllBoundingObjects::ContactPoints
 consoles: Console:All:All
-renderingDevicePerspectives: youBot:cam_floor;1;32;0.0285132;0.142254
-renderingDevicePerspectives: youBot:cam_reg;1;1.60938;0;0
+renderingDevicePerspectives: Pioneer 3-DX:cam_floor;1;32;0.00509165;0.0985915
+renderingDevicePerspectives: Pioneer 3-DX:cam_reg;1;2.09375;0.0488799;0.0169014
+renderingDevicePerspectives: youBot:cam_floor;0;32;0.0285132;0.142254
+renderingDevicePerspectives: youBot:cam_reg;0;3.65625;0;0
