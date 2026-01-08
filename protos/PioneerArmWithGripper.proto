@@ -1,0 +1,126 @@
+#VRML_SIM R2023b utf8
+
+PROTO PioneerArmWithGripper [
+  field SFVec3f translation 0.2 0 0.15
+]
+{
+  Solid {
+    translation IS translation
+    name "arm_base_link"
+    
+    boundingObject Box {
+      size 0.1 0.1 0.02 
+    }
+    
+    physics Physics {
+      mass 0.1 
+    }
+
+    children [
+      Shape {
+        geometry Box { size 0.1 0.1 0.02 }
+        appearance PBRAppearance { baseColor 0.1 0.1 0.1 metalness 0.5 }
+      }
+
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0 0 1
+          anchor 0 0 0.02 
+        }
+        device [
+          RotationalMotor { name "arm_yaw" maxTorque 30 }
+          PositionSensor { name "arm_yaw_sensor" }
+        ]
+        endPoint Solid {
+          name "arm_yaw_link"
+          boundingObject Box { size 0.05 0.05 0.05 } 
+          physics Physics { mass 0.1 }
+          
+          children [
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0 1 0
+                anchor 0 0 0
+              }
+              device [
+                RotationalMotor { name "arm_pitch" maxTorque 25 }
+                PositionSensor { name "arm_pitch_sensor" }
+              ]
+              endPoint Solid {
+                translation 0.15 0 0 
+                name "arm_main_link"
+                children [
+                  Shape {
+                    geometry Box { size 0.3 0.04 0.04 }
+                    appearance PBRAppearance {
+                      baseColor 0.2 0.2 0.8
+                      roughness 1
+                    }
+                  }
+
+                  # --- الملقط الأيسر (فتحة مضاعفة 0.09) ---
+                  SliderJoint {
+                    jointParameters JointParameters { axis 0 1 0 }
+                    device [
+                      LinearMotor {
+                        name "gripper_left"
+                        maxForce 50
+                        maxVelocity 0.05
+                        minPosition 0
+                        maxPosition 0.09
+                      }
+                      PositionSensor { name "gripper_left_sensor" }
+                    ]
+                    endPoint Solid {
+                      translation 0.18 0.02 0 
+                      name "finger_left"
+                      contactMaterial "gripper_material"
+                      children [
+                        Shape {
+                          geometry Box { size 0.08 0.04 0.02 }
+                          appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+                        }
+                      ]
+                      boundingObject Box { size 0.08 0.04 0.02 }
+                      physics Physics { mass 0.05 }
+                    }
+                  }
+
+                  # --- الملقط الأيمن (فتحة مضاعفة 0.09) ---
+                  SliderJoint {
+                    jointParameters JointParameters { axis 0 -1 0 }
+                    device [
+                      LinearMotor {
+                        name "gripper_right"
+                        maxForce 50
+                        maxVelocity 0.05
+                        minPosition 0
+                        maxPosition 0.09
+                      }
+                      PositionSensor { name "gripper_right_sensor" }
+                    ]
+                    endPoint Solid {
+                      translation 0.18 -0.02 0 
+                      name "finger_right"
+                      contactMaterial "gripper_material"
+                      children [
+                        Shape {
+                          geometry Box { size 0.08 0.04 0.02 }
+                          appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+                        }
+                      ]
+                      boundingObject Box { size 0.08 0.04 0.02 }
+                      physics Physics { mass 0.05 }
+                    }
+                  }
+                ]
+                boundingObject Box { size 0.3 0.04 0.04 }
+                physics Physics { mass 0.2 }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

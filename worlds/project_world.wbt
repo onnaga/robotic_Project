@@ -4,14 +4,24 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kuka/youbot/protos/Youbot.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "../protos/PioneerArmWithGripper.proto"
 
 WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "cube_material"
+      material2 "gripper_material"
+      coulombFriction [
+        10
+      ]
+      frictionRotation 10 10
+    }
+  ]
 }
 Viewpoint {
-  orientation -0.21858567339234142 -0.010345276785436845 0.9757629213266149 3.233703138879072
-  position 3.2162045535306154 0.110982068871994 1.6312348702720216
+  orientation -0.16858474696971282 0.10750644056097947 0.9798068933861745 2.024407760652512
+  position 2.552261850500003 -2.710049586071849 1.4969000429870785
 }
 Pioneer3dx {
   hidden position_0_0 0.0016571939296947517
@@ -20,12 +30,14 @@ Pioneer3dx {
   hidden rotation_1 0.5779881233520083 -0.5770310777286253 -0.577031077672048 2.0934384830466852
   hidden position_1_0 -149.06897290419334
   hidden rotation_2 0.9999999999999999 0 0 1.7274744681167307
-  hidden rotation_4 -0.6278573227382858 0.6278573870482406 -0.45998943880579257 2.279332622070415
-  hidden rotation_9 0.015656614010264146 -0.015656674038079903 0.9997548394460508 4.712143847967379
-  translation -0.14503781115440278 0.0571657189126449 0.09481416442470025
+  hidden rotation_4 -0.6278573227382858 0.6278573870482405 -0.45998943880579257 2.279332622070415
+  hidden rotation_9 0.01565661401026415 -0.015656674038079903 0.9997548394460508 4.712143847967379
+  translation -0.385038 0.0571657 0.0948142
   rotation 0.01718479311001972 -0.23625645315243607 0.9715387646561492 0
   controller "color_reader"
   extensionSlot [
+    PioneerArmWithGripper {
+    }
     Camera {
       translation 0.14 7.901e-07 5.11704e-07
       rotation 0 1 0 1.5708
@@ -43,56 +55,6 @@ Pioneer3dx {
       fieldOfView 1.5
       recognition Recognition {
       }
-    }
-  ]
-}
-Youbot {
-  hidden position_0_0 772.5513111718546
-  hidden position_0_1 -517.0650599959449
-  hidden position_0_2 772.5099156474485
-  hidden position_0_3 -517.1468032671386
-  hidden position_4_0 -5.86990685120447e-06
-  hidden rotation_5 0 0 -0.9999999999999999 5.869922794540946e-06
-  hidden position_5_0 -1.1000063747589557
-  hidden rotation_6 0 1 0 1.1000063747589557
-  hidden position_6_0 -2.499995238266244
-  hidden rotation_7 0 1 0 2.499995238266244
-  hidden position_7_0 -1.7799984834770992
-  hidden rotation_8 0 0.9999999999999999 0 1.7799984834770992
-  hidden position_8_0 -1.612783752696243e-07
-  hidden rotation_9 0 0 -1 1.6049041769309358e-07
-  hidden position_9_0 0.025000000023053828
-  hidden position_9_1 0.024999999953488707
-  hidden translation_10 0 0.025000000023053828 0.09
-  hidden translation_11 0 -0.024999999953488707 0.09
-  hidden rotation_12 0 1 0 6.002703695945099
-  hidden rotation_13 0 -1 0 1.84386480721883
-  hidden rotation_14 0 1 0 5.961308171538901
-  hidden rotation_15 0 -0.9999999999999999 0 1.925608078412489
-  translation 1.2096403590228095 1.7947705902039437 0.09887496251655753
-  rotation 0.0011443933775199678 0.08687819094872501 -0.9962182844644413 0.05863597156939652
-  controller "<none>"
-  bodySlot [
-    DistanceSensor {
-      name "ds_front"
-    }
-    Camera {
-      translation 0.29 0 2e-07
-      rotation 0 -1 0 -0.5236053071795865
-      name "cam_reg"
-      fieldOfView 1.5
-      recognition Recognition {
-      }
-    }
-    Camera {
-      translation 0.29 0 2e-07
-      rotation 0 1 0 1.5708
-      name "cam_floor"
-      fieldOfView 1.57
-      width 1
-      height 1
-      near 0.001
-      far 1
     }
   ]
 }
@@ -305,6 +267,7 @@ Solid {
   ]
   name "start_box4"
   model "CUBE"
+  contactMaterial "cube_material"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -334,6 +297,7 @@ Solid {
   ]
   name "start_box"
   model "CUBE"
+  contactMaterial "cube_material"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -361,6 +325,7 @@ Solid {
   ]
   name " start_box2"
   model "CUBE"
+  contactMaterial "cube_material"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -390,6 +355,7 @@ Solid {
   ]
   name "start_box3"
   model "CUBE"
+  contactMaterial "cube_material"
   boundingObject Box {
     size 0.05 0.05 0.05
   }
@@ -419,6 +385,9 @@ Solid {
   ]
   name "solid_wall"
   model "TARGET"
+  recognitionColors [
+    1 0 0
+  ]
 }
 Solid {
   translation 2.49 1.82 0.0500972
@@ -436,6 +405,9 @@ Solid {
   ]
   name "solid_wall(1)"
   model "TARGET"
+  recognitionColors [
+    0 1 0
+  ]
 }
 Solid {
   translation 2.49 -0.76 0.0500972
@@ -453,6 +425,9 @@ Solid {
   ]
   name "solid_wall(2)"
   model "TARGET"
+  recognitionColors [
+    0 0 1
+  ]
 }
 Solid {
   translation 2.49 0.25 0.0500972
@@ -470,4 +445,7 @@ Solid {
   ]
   name "solid_wall(3)"
   model "TARGET"
+  recognitionColors [
+    1 1 0
+  ]
 }
