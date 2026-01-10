@@ -20,8 +20,47 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.16858474696971282 0.10750644056097947 0.9798068933861745 2.024407760652512
-  position 2.552261850500003 -2.710049586071849 1.4969000429870785
+  orientation 0.1862029799150171 0.3948501851537921 -0.8996787101820203 0.9658007341907143
+  position -3.6434257143826954 4.825244573946753 3.0567153618374654
+}
+Pioneer3dx {
+  hidden position_0_0 0.0016571939296947517
+  hidden position_0_1 53.71328398804614
+  hidden position_0_2 -17.247441248177815
+  hidden rotation_1 0.5779881233520083 -0.5770310777286253 -0.577031077672048 2.0934384830466852
+  hidden position_1_0 -149.06897290419334
+  hidden rotation_2 0.9999999999999999 0 0 1.7274744681167307
+  hidden rotation_4 -0.6278573227382858 0.6278573870482406 -0.45998943880579257 2.279332622070415
+  hidden rotation_9 0.01565661401026415 -0.015656674038079903 0.9997548394460508 4.712143847967379
+  translation -1.46504 0.0571657 0.114814
+  rotation 0.01718479311001972 -0.23625645315243607 0.9715387646561492 0
+  name "Pioneer3-DX2"
+  controller "controller2"
+  controllerArgs [
+    "1235"
+  ]
+  extensionSlot [
+    PioneerArmWithGripper {
+    }
+    Camera {
+      translation 0.14 7.901e-07 5.11704e-07
+      rotation 0 1 0 1.5708
+      name "cam_floor"
+      fieldOfView 1.57
+      width 1
+      height 1
+      near 0.001
+      far 1
+    }
+    Camera {
+      translation 0.149317 -6.18888e-08 0.01076
+      rotation 0 -1 0 -0.5236053071795865
+      name "cam_reg"
+      fieldOfView 1.5
+      recognition Recognition {
+      }
+    }
+  ]
 }
 Pioneer3dx {
   hidden position_0_0 0.0016571939296947517
@@ -34,7 +73,11 @@ Pioneer3dx {
   hidden rotation_9 0.01565661401026415 -0.015656674038079903 0.9997548394460508 4.712143847967379
   translation -0.385038 0.0571657 0.0948142
   rotation 0.01718479311001972 -0.23625645315243607 0.9715387646561492 0
+  name "Pioneer3-DX"
   controller "color_reader"
+  controllerArgs [
+    "1234"
+  ]
   extensionSlot [
     PioneerArmWithGripper {
     }
@@ -370,7 +413,7 @@ Solid {
   angularVelocity 1.3322676295501886e-15 1.9984014443252818e-15 -3.863044150113367e-16
 }
 Solid {
-  translation 2.49 0.93 0.0500972
+  translation 2.49 -0.1 0.0500972
   rotation 0 1 0 -1.5707953071795862
   children [
     Shape {
@@ -379,7 +422,7 @@ Solid {
         emissiveColor 1 0 0
       }
       geometry Plane {
-        size 0.1 0.1
+        size 0.1 0.6
       }
     }
   ]
@@ -390,8 +433,8 @@ Solid {
   ]
 }
 Solid {
-  translation 2.49 1.82 0.0500972
-  rotation 0 1 0 -1.5707953071795862
+  translation 0.35 2.49 0.0500966
+  rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
   children [
     Shape {
       appearance PBRAppearance {
@@ -399,7 +442,7 @@ Solid {
         emissiveColor 0 1 0
       }
       geometry Plane {
-        size 0.1 0.1
+        size 0.1 0.6
       }
     }
   ]
@@ -410,8 +453,8 @@ Solid {
   ]
 }
 Solid {
-  translation 2.49 -0.76 0.0500972
-  rotation 0 1 0 -1.5707953071795862
+  translation 0.00999961 -2.49 0.0500999
+  rotation 0.5773509358560258 0.577349935856137 0.577349935856137 -2.094395307179586
   children [
     Shape {
       appearance PBRAppearance {
@@ -419,7 +462,7 @@ Solid {
         emissiveColor 0 0 1
       }
       geometry Plane {
-        size 0.1 0.1
+        size 0.1 0.6
       }
     }
   ]
@@ -430,8 +473,8 @@ Solid {
   ]
 }
 Solid {
-  translation 2.49 0.25 0.0500972
-  rotation 0 1 0 -1.5707953071795862
+  translation -2.48 -0.44 0.0501002
+  rotation 0.7071072811865696 -3.3905013482585576e-09 0.7071062811861719 3.14159
   children [
     Shape {
       appearance PBRAppearance {
@@ -439,7 +482,7 @@ Solid {
         emissiveColor 1 1 0
       }
       geometry Plane {
-        size 0.1 0.1
+        size 0.1 0.6
       }
     }
   ]

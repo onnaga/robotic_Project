@@ -7,8 +7,10 @@ centralWidgetVisible: 1
 projectionMode: PERSPECTIVE
 renderingMode: PLAIN
 orthographicViewHeight: 1
-textFiles: 0 "controllers/color_reader/color_reader.py" "protos/PioneerArmWithGripper.proto"
+textFiles: 2 "controllers/color_reader/color_reader.py" "protos/PioneerArmWithGripper.proto" "controllers/controller2/controller2.py"
 globalOptionalRendering: AllBoundingObjects::ContactPoints
 consoles: Console:All:All
-renderingDevicePerspectives: Pioneer 3-DX:cam_floor;1;32;0.00509165;0.0985915
-renderingDevicePerspectives: Pioneer 3-DX:cam_reg;1;2.09375;0.0488799;0.0169014
+renderingDevicePerspectives: Pioneer3-DX2:cam_floor;1;32;0;0
+renderingDevicePerspectives: Pioneer3-DX2:cam_reg;1;1.76563;0;0
+renderingDevicePerspectives: Pioneer3-DX:cam_floor;1;32;0.00509165;0.0985915
+renderingDevicePerspectives: Pioneer3-DX:cam_reg;1;2.09375;0.165988;0.0281691
