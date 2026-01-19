@@ -13,33 +13,106 @@ WorldInfo {
       material1 "cube_material"
       material2 "gripper_material"
       coulombFriction [
-        10
+        1000
       ]
       frictionRotation 10 10
     }
   ]
 }
 Viewpoint {
-  orientation 0.1862029799150171 0.3948501851537921 -0.8996787101820203 0.9658007341907143
-  position -3.6434257143826954 4.825244573946753 3.0567153618374654
+  orientation 0.23446866086071294 -0.0696318720019922 -0.9696266546850301 3.702510253447902
+  position 2.8609392491424783 -1.770968037793472 1.800295620097627
 }
 Pioneer3dx {
-  hidden position_0_0 0.0016571939296947517
-  hidden position_0_1 53.71328398804614
-  hidden position_0_2 -17.247441248177815
-  hidden rotation_1 0.5779881233520083 -0.5770310777286253 -0.577031077672048 2.0934384830466852
-  hidden position_1_0 -149.06897290419334
-  hidden rotation_2 0.9999999999999999 0 0 1.7274744681167307
-  hidden rotation_4 -0.6278573227382858 0.6278573870482406 -0.45998943880579257 2.279332622070415
-  hidden rotation_9 0.01565661401026415 -0.015656674038079903 0.9997548394460508 4.712143847967379
-  translation -1.46504 0.0571657 0.114814
-  rotation 0.01718479311001972 -0.23625645315243607 0.9715387646561492 0
+  hidden position_0_0 0.0016572104588197904
+  hidden position_0_1 53.729257881760226
+  hidden position_0_2 -17.26342455384295
+  hidden linearVelocity_0 0.048699901820112065 -2.0230448057283354e-07 -0.6514218390328631
+  hidden angularVelocity_0 6.800132648082902e-06 2.268224353318555 5.717347063156632e-07
+  hidden rotation_1 0.5779881297140691 -0.5770310745423191 -0.5770310744857413 2.0934384735088627
+  hidden position_1_0 -148.92626779678548
+  hidden rotation_2 1 0 0 1.870179575524594
+  hidden rotation_4 -0.6300632025750503 0.6300632666564261 -0.4539169976670892 2.2893796199841248
+  hidden rotation_9 0.00766721994360801 -0.007667279510134051 0.9999412115535842 4.712330248873653
+  hidden position_33_0 1.2771495139750458e-06
+  hidden rotation_34 0 0 0.9999999999999999 1.2769869140165398e-06
+  hidden position_34_0 -0.6374000351125373
+  hidden translation_35 0.12054685984568474 0 0.08926620066601265
+  hidden rotation_35 0 -1 0 0.6374000351125375
+  hidden position_35_0 5.569885537505893e-08
+  hidden rotation_36 1 0 0 5.16191365590357e-08
+  hidden position_36_0 1.7804771823327534e-09
+  hidden position_36_1 -1.7253404065197322e-09
+  hidden translation_37 0.03 0.020000001780477183 0
+  hidden translation_38 0.03 -0.019999998274659595 0
+  translation 0.7979872180550254 0.6971660201510552 0.07570939370514215
+  rotation 2.7769770289675695e-06 0.9999999999958593 7.549125360317826e-07 0.14270532079249132
   name "Pioneer3-DX2"
   controller "controller2"
   controllerArgs [
     "1235"
   ]
   extensionSlot [
+    Solid {
+      translation -0.03 0 0.23
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+              transparency 0.7
+            }
+          }
+          geometry Box {
+            size 0.15 0.15 0.15
+          }
+        }
+      ]
+      name "robot_marker(1)"
+      model "ROBOT"
+      boundingObject Box {
+        size 0.15 0.15 0.15
+      }
+      recognitionColors [
+        1 0 1
+      ]
+    }
+    Camera {
+      translation 0.2 7.901e-07 0.19
+      rotation 0 1 0 7.33682e-06
+      name "partner_cam"
+      fieldOfView 1.5
+      recognition Recognition {
+      }
+    }
+    Solid {
+      translation 0.21 0 0.07
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+              transparency 0.7
+            }
+          }
+          geometry Box {
+            size 0.15 0.15 0.15
+          }
+        }
+      ]
+      name "robot_marker"
+      model "ROBOT"
+      boundingObject Box {
+        size 0.15 0.15 0.15
+      }
+      recognitionColors [
+        1 0 1
+      ]
+    }
+    Compass {
+    }
+    GPS {
+    }
     PioneerArmWithGripper {
     }
     Camera {
@@ -63,22 +136,57 @@ Pioneer3dx {
   ]
 }
 Pioneer3dx {
-  hidden position_0_0 0.0016571939296947517
-  hidden position_0_1 53.71328398804614
-  hidden position_0_2 -17.247441248177815
-  hidden rotation_1 0.5779881233520083 -0.5770310777286253 -0.577031077672048 2.0934384830466852
-  hidden position_1_0 -149.06897290419334
-  hidden rotation_2 0.9999999999999999 0 0 1.7274744681167307
-  hidden rotation_4 -0.6278573227382858 0.6278573870482405 -0.45998943880579257 2.279332622070415
-  hidden rotation_9 0.01565661401026415 -0.015656674038079903 0.9997548394460508 4.712143847967379
-  translation -0.385038 0.0571657 0.0948142
-  rotation 0.01718479311001972 -0.23625645315243607 0.9715387646561492 0
+  hidden position_0_0 0.0016571869855801541
+  hidden position_0_1 53.777278281812784
+  hidden position_0_2 -17.183446954410552
+  hidden linearVelocity_0 0.03419443309653973 -3.058200066290366e-08 -0.06173261087045598
+  hidden angularVelocity_0 1.9659081132520855e-07 -1.0136561562274862 -9.730137967171904e-09
+  hidden rotation_1 0.5779881206792183 -0.5770310790672366 -0.5770310790106594 2.093438487053654
+  hidden position_1_0 -149.1067233340569
+  hidden rotation_2 1 0 0 1.6897240382531666
+  hidden rotation_4 -0.6364600824053738 0.6364601457881569 -0.4357029335772974 2.3197904948973607
+  hidden rotation_9 0.04758431969378068 -0.04758438148954313 0.9977331602976508 4.710119625757017
+  hidden position_29_0 -9.61095229999786e-07
+  hidden rotation_30 0 0 -1 9.610960183499607e-07
+  hidden position_30_0 9.153816915450364e-07
+  hidden translation_31 0.14999999999993774 0 -1.3730725373173685e-07
+  hidden rotation_31 0 0.9999999999999999 0 9.151788075437678e-07
+  hidden position_31_0 3.320513482806246e-08
+  hidden rotation_32 1 0 0 2.9802322387695313e-08
+  hidden position_32_0 7.735459318956374e-12
+  hidden position_32_1 -6.227346931496472e-12
+  translation -0.3825123076391933 0.05716569834173136 0.09450088534609419
+  rotation 4.4946185617280564e-07 -0.9999999999998989 -4.366218239262161e-09 0.0377504885359577
   name "Pioneer3-DX"
   controller "color_reader"
   controllerArgs [
     "1234"
   ]
   extensionSlot [
+    Solid {
+      translation -0.05 0 0.23
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+              transparency 0.7
+            }
+          }
+          geometry Box {
+            size 0.15 0.15 0.15
+          }
+        }
+      ]
+      name "robot_marker"
+      model "ROBOT"
+      boundingObject Box {
+        size 0.15 0.15 0.15
+      }
+      recognitionColors [
+        1 0 1
+      ]
+    }
     PioneerArmWithGripper {
     }
     Camera {
@@ -267,7 +375,7 @@ Solid {
   name "start1(1)"
 }
 Solid {
-  translation 0 1.21 0.0001
+  translation -0.96 1.21 0.0001
   children [
     Shape {
       appearance PBRAppearance {
@@ -281,7 +389,7 @@ Solid {
   name "start1(2)"
 }
 Solid {
-  translation 0 -1.6 0.0001
+  translation 0 -1.25 0.0001
   children [
     Shape {
       appearance PBRAppearance {
@@ -295,8 +403,8 @@ Solid {
   name "start1(3)"
 }
 Solid {
-  translation -1.8236346736050957e-18 1.21 0.02496076
-  rotation 0.2639345636614213 0.9237709728149691 0.2774630351764727 2.422905334234502e-16
+  translation -0.96 1.21 0.024960785603752922
+  rotation 0.24467550656644343 0.6116887664161202 0.7523102747715065 8.712062098874922e-17
   children [
     Shape {
       appearance PBRAppearance {
@@ -321,12 +429,12 @@ Solid {
   recognitionColors [
     1 1 0
   ]
-  linearVelocity -2.917933539344595e-17 -4.2575934609058776e-17 -1.232595164407831e-32
-  angularVelocity 1.9984014443252818e-15 -1.3322676295501878e-15 1.6207281602776213e-16
+  linearVelocity -4.8825664912584765e-17 3.107344396528744e-17 -2.0007788116060964e-07
+  angularVelocity -6.661338147750937e-16 -2.664535259100375e-15 -9.547738290477298e-17
 }
 Solid {
-  translation 1.457259999979276 -0.989198999980289 0.024960760000000047
-  rotation -2.050804109839984e-15 5.40203977606414e-15 1 0.016193400000000028
+  translation 1.457259999979276 -0.989198999980289 0.02496076000000003
+  rotation -7.557929830019342e-16 2.7587268172060313e-15 1 0.016193400000000028
   children [
     Shape {
       appearance PBRAppearance {
@@ -351,10 +459,12 @@ Solid {
   recognitionColors [
     1 0 0
   ]
+  linearVelocity -1.5079564576048574e-17 -2.990283901880188e-17 -2.1316282072803005e-16
+  angularVelocity 0 6.661338147750935e-16 1.893853823787285e-16
 }
 Solid {
-  translation -1.04 -0.82 0.024960759999999995
-  rotation -0.19550623877487786 0.9123624476162833 0.3596832978881909 1.635468172758273e-16
+  translation -1.04 -0.82 0.02496076
+  rotation -0.8211482383251596 0.23461378237869748 0.5202614187247102 9.085690472523704e-17
   children [
     Shape {
       appearance PBRAppearance {
@@ -379,12 +489,12 @@ Solid {
   recognitionColors [
     0 0 1
   ]
-  linearVelocity -1.7969388756878745e-18 7.294234354151432e-18 0
-  angularVelocity -6.661338147750945e-16 1.9984014443252806e-15 -9.806292341273467e-17
+  linearVelocity -3.154368386488591e-17 1.0225324298955717e-17 7.105427357601002e-17
+  angularVelocity -1.3322676295501882e-15 -6.661338147750943e-16 7.458235341010374e-17
 }
 Solid {
-  translation 1.1731900564004166e-12 -1.6000000000282666 0.024960759998793824
-  rotation 1.8742887834777507e-17 5.4595868583790114e-17 1 1.636660000000001
+  translation -0.023036400000000002 -1.25074 0.024960785603752925
+  rotation -4.4526116718215987e-17 1.536251276526173e-17 1 1.636660000000001
   children [
     Shape {
       appearance PBRAppearance {
@@ -409,8 +519,8 @@ Solid {
   recognitionColors [
     0 1 0
   ]
-  linearVelocity 4.818735423810237e-17 -3.961828277559549e-17 9.425562552678912e-12
-  angularVelocity 1.3322676295501886e-15 1.9984014443252818e-15 -3.863044150113367e-16
+  linearVelocity 1.2198774766762924e-17 3.064981193225075e-17 -2.0007788116060964e-07
+  angularVelocity -1.9984014443252818e-15 -6.661338147750939e-16 1.99831873789948e-17
 }
 Solid {
   translation 2.49 -0.1 0.0500972

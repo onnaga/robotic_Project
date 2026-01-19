@@ -7,13 +7,13 @@ PROTO PioneerArmWithGripper [
   Solid {
     translation IS translation
     name "arm_base_link"
-    
+
     boundingObject Box {
-      size 0.1 0.1 0.02 
+      size 0.1 0.1 0.02
     }
-    
+
     physics Physics {
-      mass 0.1 
+      mass 0.1
     }
 
     children [
@@ -25,7 +25,7 @@ PROTO PioneerArmWithGripper [
       HingeJoint {
         jointParameters HingeJointParameters {
           axis 0 0 1
-          anchor 0 0 0.02 
+          anchor 0 0 0.02
         }
         device [
           RotationalMotor { name "arm_yaw" maxTorque 30 }
@@ -33,9 +33,9 @@ PROTO PioneerArmWithGripper [
         ]
         endPoint Solid {
           name "arm_yaw_link"
-          boundingObject Box { size 0.05 0.05 0.05 } 
+          boundingObject Box { size 0.05 0.05 0.05 }
           physics Physics { mass 0.1 }
-          
+
           children [
             HingeJoint {
               jointParameters HingeJointParameters {
@@ -47,8 +47,9 @@ PROTO PioneerArmWithGripper [
                 PositionSensor { name "arm_pitch_sensor" }
               ]
               endPoint Solid {
-                translation 0.15 0 0 
+                translation 0.15 0 0
                 name "arm_main_link"
+
                 children [
                   Shape {
                     geometry Box { size 0.3 0.04 0.04 }
@@ -58,62 +59,92 @@ PROTO PioneerArmWithGripper [
                     }
                   }
 
-                  # --- الملقط الأيسر (فتحة مضاعفة 0.09) ---
-                  SliderJoint {
-                    jointParameters JointParameters { axis 0 1 0 }
-                    device [
-                      LinearMotor {
-                        name "gripper_left"
-                        maxForce 50
-                        maxVelocity 0.05
-                        minPosition 0
-                        maxPosition 0.09
-                      }
-                      PositionSensor { name "gripper_left_sensor" }
-                    ]
-                    endPoint Solid {
-                      translation 0.18 0.02 0 
-                      name "finger_left"
-                      contactMaterial "gripper_material"
-                      children [
-                        Shape {
-                          geometry Box { size 0.08 0.04 0.02 }
-                          appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
-                        }
-                      ]
-                      boundingObject Box { size 0.08 0.04 0.02 }
-                      physics Physics { mass 0.05 }
+                  # ================== المعصم ==================
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 1 0 0
+                      anchor 0.15 0 0
                     }
-                  }
+                    device [
+                      RotationalMotor {
+                        name "wrist_roll"
+                        maxTorque 10
+                      }
+                      PositionSensor {
+                        name "wrist_roll_sensor"
+                      }
+                    ]
 
-                  # --- الملقط الأيمن (فتحة مضاعفة 0.09) ---
-                  SliderJoint {
-                    jointParameters JointParameters { axis 0 -1 0 }
-                    device [
-                      LinearMotor {
-                        name "gripper_right"
-                        maxForce 50
-                        maxVelocity 0.05
-                        minPosition 0
-                        maxPosition 0.09
-                      }
-                      PositionSensor { name "gripper_right_sensor" }
-                    ]
                     endPoint Solid {
-                      translation 0.18 -0.02 0 
-                      name "finger_right"
-                      contactMaterial "gripper_material"
+                      translation 0.15 0 0
+                      name "wrist_link"
+
                       children [
-                        Shape {
-                          geometry Box { size 0.08 0.04 0.02 }
-                          appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+
+                        # --- الملقط الأيسر ---
+                        SliderJoint {
+                          jointParameters JointParameters { axis 0 1 0 }
+                          device [
+                            LinearMotor {
+                              name "gripper_left"
+                              maxForce 50
+                              maxVelocity 0.05
+                              minPosition 0
+                              maxPosition 0.11
+                            }
+                            PositionSensor { name "gripper_left_sensor" }
+                          ]
+                          endPoint Solid {
+                            translation 0.03 0.02 0
+                            name "finger_left"
+                            contactMaterial "gripper_material"
+                            children [
+                              Shape {
+                                geometry Box { size 0.08 0.04 0.02 }
+                                appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+                              }
+                            ]
+                            boundingObject Box { size 0.08 0.04 0.02 }
+                            physics Physics { mass 0.05 }
+                          }
                         }
+
+                        # --- الملقط الأيمن ---
+                        SliderJoint {
+                          jointParameters JointParameters { axis 0 -1 0 }
+                          device [
+                            LinearMotor {
+                              name "gripper_right"
+                              maxForce 50
+                              maxVelocity 0.05
+                              minPosition 0
+                              maxPosition 0.11
+                            }
+                            PositionSensor { name "gripper_right_sensor" }
+                          ]
+                          endPoint Solid {
+                            translation 0.03 -0.02 0
+                            name "finger_right"
+                            contactMaterial "gripper_material"
+                            children [
+                              Shape {
+                                geometry Box { size 0.08 0.04 0.02 }
+                                appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+                              }
+                            ]
+                            boundingObject Box { size 0.08 0.04 0.02 }
+                            physics Physics { mass 0.05 }
+                          }
+                        }
+
                       ]
-                      boundingObject Box { size 0.08 0.04 0.02 }
-                      physics Physics { mass 0.05 }
+                      boundingObject Box { size 0.01 0.01 0.01 }
+                      physics Physics { mass 0.1 }
                     }
                   }
+                  # ===========================================
                 ]
+
                 boundingObject Box { size 0.3 0.04 0.04 }
                 physics Physics { mass 0.2 }
               }
